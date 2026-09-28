@@ -589,7 +589,7 @@ img.is-missing { visibility: hidden; }
 .scroll-cue {
   position: absolute;
   z-index: 2;
-  bottom: 4.5rem;
+  bottom: 2rem;
   left: 50%;
   display: flex;
   flex-direction: column;
@@ -620,6 +620,13 @@ img.is-missing { visibility: hidden; }
   animation: drip 2s var(--ease) infinite;
 }
 @keyframes drip { to { top: 100%; } }
+
+/* Sous 900 px, les boutons du hero occupent le bas sur toute la largeur :
+   l'indicateur de scroll n'a pas la place, on le masque. Au-delà, la mise en
+   page desktop (boutons à gauche, méta à droite) laisse le centre libre. */
+@media (max-width: 899px) {
+  .scroll-cue { display: none; }
+}
 
 /* ------------------------------------------------------------------
    8. EXPÉRIENCE + CHIFFRES CLÉS
@@ -1889,7 +1896,9 @@ html:not(.js) .ruler span { width: calc(var(--size) / 60 * 100%); }
     text-align: right;
   }
   .hero__coords { font-family: var(--font-display); font-size: 1rem; font-style: italic; letter-spacing: 0.05em; text-transform: none; color: var(--brass); }
-  .scroll-cue { left: var(--gutter); transform: none; align-items: flex-start; }
+  /* Indicateur de scroll : centré au-dessus de la vague, pour ne pas
+     chevaucher les boutons (alignés à gauche) ni la méta (à droite) */
+  .scroll-cue { bottom: 2.25rem; }
   .hero__content { padding-left: 0; }
 
   /* Expérience : composition asymétrique */
