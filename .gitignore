@@ -1,0 +1,17 @@
+# Images récupérées sur lozerepeche.com — propriété de la Fédération.
+# Exclues du dépôt public tant que l'autorisation n'est pas obtenue.
+# Remplace-les par tes propres photos, puis retire ces lignes pour les versionner.
+assets/images/
+
+# Système
+.DS_Store
+Thumbs.db
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+
+# Dépendances / build éventuels
+node_modules/
+dist/
